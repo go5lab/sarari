@@ -8,6 +8,22 @@ import Head from "next/head"
 
 import styles from "../styles/top.module.scss"
 
+function getMonthRemaining() {
+    const date = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000))
+    const now_year = date.getFullYear()
+    const now_month = date.getMonth()+1
+    const now_day = date.getDate()
+    const now_hour = date.getHours()
+    const now_minutes = date.getMinutes()
+    const now_second = date.getSeconds()
+    const now_ms = date.getMilliseconds()
+    const from = new Date(`${now_year}/${now_month}/1/0:0:0:0`)
+    const to = new Date(`${now_year}/${now_month}/${now_day}/${now_hour}:${now_minutes}:${now_second}:${now_ms}`)
+    const ms = to.getTime() - from.getTime()
+    const remaining = Math.floor(ms / (1000*60*60*24))
+    return String(ms)
+}
+
 const Page: NextPage = () => {
     const inputRef = React.useRef<HTMLInputElement>(null)
     const handleClick = (e) =>  {
@@ -16,6 +32,7 @@ const Page: NextPage = () => {
     }
     const router = useRouter()
     const { salary } = router.query
+    const progress_month = getMonthRemaining()
     const sec_salary = (Number(salary) / 2592000)
 
     const appName = process.env.serviceName
@@ -33,6 +50,7 @@ const Page: NextPage = () => {
                     <h2>{salary}</h2>
                     <p>あなたの秒給</p>
                     <h2>{sec_salary}</h2>
+                    <p>今月の経過時間:{progress_month}</p>
                 </div>
             </main>
         </div>
