@@ -17,9 +17,36 @@ $mobile: 767px;
         margin: auto;
         margin-top: 5vh;
         box-shadow:
-0 1.9px 2.5px rgba(0, 0, 0, 0.057),
-0 5px 6.1px rgba(0, 0, 0, 0.076);
+        0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+        0 5px 6.1px rgba(0, 0, 0, 0.076);
         transition: 0.5s;
+        position: relative;
+    }
+    .input_wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+        input {
+            width: 150px;
+            height: 35px;
+            background-color: rgb(228, 228, 228);
+            color: #16181d;
+            border: none;
+            margin: 5px;
+            margin-right: 0px;
+        }
+        button {
+            background-color: #3b404d;
+            color: #fff;
+            border: none;
+            height: 35px;
+            width: 35px;
+            margin: 5px;
+            margin-left: 0px;
+            cursor: pointer;
+        }
     }
 }
 
