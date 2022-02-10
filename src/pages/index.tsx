@@ -23,9 +23,9 @@ const Page = () => {
             <main className={styles.main}>
                 <p>Sarariは10ms給(0.01秒給)を割り出し、10ms秒毎に幸せになれるアプリです💸💚</p>
                 <div className={styles.input_box}>
+                    <div className={styles.input_wrap}>
                     <h2>あなたの月給を入力</h2>
                     <p>半角数字で入力してください</p>
-                    <div className={styles.input_wrap}>
                         <input ref={inputRef}></input>
                         <button onClick={handleClick}>Go</button>
                     </div>

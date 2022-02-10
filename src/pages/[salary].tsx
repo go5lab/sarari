@@ -6,7 +6,7 @@ import Link from "next/link"
 import Head from "next/head"
 
 
-import styles from "../styles/top.module.scss"
+import styles from "../styles/salary.module.scss"
 import { useEffect, useState } from "react"
 import { useAnimationFrame } from "../hooks/animationFrame"
 
@@ -68,11 +68,11 @@ const Page: NextPage = () => {
                 <div className={styles.input_box}>
                 <div className={styles.input_wrap}>
                     <p>あなたの月給</p>
-                    <h2>{salary}</h2>
+                    <h2>{salary}円</h2>
                     <p>あなたの10ms給</p>
-                    <h2>{ms_salary * 10}</h2>
+                    <h2>{ms_salary * 10}円</h2>
                     <p>すでに獲得した給料</p>
-                    <h2>{sudeni}</h2>
+                    <h2>{sudeni}円</h2>
                     <p>今月の残り時間</p>
                     <h2>{progress_month}ms</h2>
                 </div>
