@@ -7,10 +7,14 @@ import Head from "next/head"
 import styles from "../styles/top.module.scss"
 
 const Page = () => {
-    const inputRef = React.useRef<HTMLInputElement>(null)
-    const handleClick = (e) =>  {
-        e = inputRef.current.value
-        window.location.assign(`/${e}`)
+    const [monthlySalary, setMonthlySalary] = React.useState("0")
+    const [errorMessage, setErrorMessage] = React.useState<String>(null)
+
+    const handleClick = () =>  {
+        if (monthlySalary == "") {
+            setErrorMessage("値がありません")
+        }
+        window.location.assign(`/${monthlySalary}`)
     }
     const appName = process.env.serviceName
     const appDesc = process.env.serviceDescription
@@ -26,7 +30,15 @@ const Page = () => {
                     <div className={styles.input_wrap}>
                     <h2>あなたの月給を入力</h2>
                     <p>半角数字で入力してください</p>
-                        <input ref={inputRef}></input>
+                        <input
+                         value={monthlySalary} 
+                         onKeyPress={(event) => {
+                             if (!/[0-9]/.test(event.key)) {
+                                 event.preventDefault();
+                                }
+                            }
+                        }
+                        onChange={(e) => setMonthlySalary(e.target.value)} />
                         <button onClick={handleClick}>Go</button>
                     </div>
                 </div>
