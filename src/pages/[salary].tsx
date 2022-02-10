@@ -45,11 +45,9 @@ const Page: NextPage = () => {
     const router = useRouter()
     const { salary } = router.query
     const progress_month = getMonthRemaining()
-    const sec_salary = (Number(salary) / 2592000)
     const ms_salary = (Number(salary) / 2624671916)
     const ms_sudeni = (ms_salary * Number(getMonthSudeni()))
     const appName = process.env.serviceName
-    const appDesc = process.env.serviceDescription
 
 
     const [sudeni, setSudeni] = useState(0);
