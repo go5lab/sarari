@@ -11,7 +11,7 @@ $mobile: 767px;
     }
     .input_box {
         width: 500px;
-        height: 250px;
+        height: 300px;
         background-color: #fff;
         border-radius: 13px;
         margin: auto;
@@ -58,6 +58,47 @@ $mobile: 767px;
         text-align: left;
         img {
             max-width: 100%;
+        }
+        .input_box {
+            width: 95vw;
+            height: fit-content;
+            background-color: #fff;
+            border-radius: 13px;
+            margin: auto;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            box-shadow:
+            0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+            0 5px 6.1px rgba(0, 0, 0, 0.076);
+            transition: 0.5s;
+            position: relative;
+        }
+        .input_wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform : translate(-50%,-50%);
+            transform : translate(-50%,-50%);
+            display: flex;
+            input {
+                width: 50vw;
+                height: 35px;
+                background-color: rgb(228, 228, 228);
+                color: #16181d;
+                border: none;
+                margin: 5px;
+                margin-right: 0px;
+            }
+            button {
+                background-color: #3b404d;
+                color: #fff;
+                border: none;
+                height: 35px;
+                width: 35px;
+                margin: 5px;
+                margin-left: 0px;
+                cursor: pointer;
+            }
         }
     }
 }
