@@ -43,16 +43,29 @@ function getMonthSudeni() {
 
 const Page: NextPage = () => {
     const router = useRouter()
-    const { salary } = router.query
-    const progress_month = getMonthRemaining()
-    const ms_salary = (Number(salary) / 2624671916)
-    const ms_sudeni = (ms_salary * Number(getMonthSudeni()))
-    const appName = process.env.serviceName
-
+    const [salary, setSalary] = useState<String>()
 
     const [sudeni, setSudeni] = useState(0);
+    const [msSalary, setMsSalary] = useState(0)
+    const [msSudeni, setMsSudeni] = useState(0)
+    const [progressMonth, setProgressMonth] = useState("")
+
+    const appName = process.env.serviceName
+
+    useEffect(() => {
+        if (router.asPath !== router.route) {
+            setSalary(String(router.query.salary))
+        }
+    }, [router])
+
+    useEffect(() => {
+        setProgressMonth(getMonthRemaining())
+        setMsSalary(Number(salary) / 2624671916)
+        setMsSudeni(msSalary * Number(getMonthSudeni()))
+    }, [salary])
+
     useAnimationFrame(() => {
-        setSudeni(ms_sudeni)
+        setSudeni(msSudeni)
     });
     return (
         <div>
@@ -68,11 +81,11 @@ const Page: NextPage = () => {
                     <p>あなたの月給</p>
                     <h2>¥{salary}</h2>
                     <p>あなたの10ms給</p>
-                    <h2>¥{ms_salary * 10}</h2>
+                    <h2>¥{msSalary * 10}</h2>
                     <p>すでに獲得した給料</p>
                     <h2>¥{sudeni}</h2>
                     <p>今月の残り時間</p>
-                    <h2>{progress_month}ms</h2>
+                    <h2>{progressMonth}ms</h2>
                 </div>
                 </div>
             </main>
