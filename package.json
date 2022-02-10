@@ -1,0 +1,28 @@
+{
+  "name": "sarari",
+  "description": "💸10ms給を表示して嬉しくなれるサービスです",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go5lab/sarari.git"
+  },
+  "homepage": "https://sarari.go5.run/",
+  "dependencies": {
+    "@types/react": "^17.0.39",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.6.6",
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.7",
+    "typescript": "^4.5.5"
+  }
+}

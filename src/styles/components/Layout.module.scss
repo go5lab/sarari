@@ -1,0 +1,11 @@
+.parent {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    color: #16181d;
+    .main {
+        height: 100%;
+        width: 100%;
+    }
+}

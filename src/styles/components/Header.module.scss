@@ -1,0 +1,32 @@
+$mobile: 767px;
+.header {
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: 8vh;
+}
+
+.logo {
+    color: #16181d;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 25px;
+    margin-left: 4vw;
+}
+.link {
+    color: black;
+    text-decoration: none;
+    padding: fit-content;
+}
+.box {
+    width: 100%;
+}
+
+// mobile
+@media screen and (max-width: $mobile) {
+    .header {
+        margin-bottom: 1vh;
+    }
+}
+    
